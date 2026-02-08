@@ -8,7 +8,6 @@ CREATE TABLE vendas_loja (
     cliente VARCHAR(100),
     descricao_servico VARCHAR(255),
     
-    -- Campos opcionais (Aceitam NULL e padrão é 0)
     valor_peca_custo DECIMAL(10,2) DEFAULT 0.00,
     valor_peca_venda DECIMAL(10,2) DEFAULT 0.00,
     valor_frete DECIMAL(10,2) DEFAULT 0.00,
