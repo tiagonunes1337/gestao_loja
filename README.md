@@ -1,6 +1,6 @@
 # 📊 Dashboard de Vendas e BI - Assistência Técnica Better Smart
 
-Este projeto integra um banco de dados **MySQL** com o **Power BI** para automatizar o controle financeiro e a análise de lucratividade da assistência técnica. A solução substitui controles manuais, permitindo o monitoramento de faturamento bruto, custos de peças, despesas de frete e o lucro líquido real de cada serviço prestado.
+Este projeto integra um banco de dados MySQL com o Power BI e uma interface PHP para automatizar o controle financeiro e a análise de lucratividade da assistência técnica. A solução substitui controles manuais, permitindo o monitoramento de faturamento bruto, custos de peças, despesas de frete e o lucro líquido real de cada serviço prestado.
 
 ## 🛠️ Tecnologias Utilizadas
 * **Banco de Dados:** MySQL 8.0
@@ -50,6 +50,6 @@ Servidor: 127.0.0.1:3306 | Banco: bettersmart.
 
 Utilize as credenciais de banco de dados (Usuário dev).
 
-Ou instale o site completo e acessa em PHP, tem como você criar um relatorio em PDF semanal das suas vendas e quanto vai ganhar de comissão de 4%.
+Hospede os arquivos PHP em um servidor (Apache/Nginx) para acessar o painel de visualização e a emissão de PDFs de comissões
 
 Desenvolvido por Tiago de Aquino Nunes Técnico em Informática | Estudante de Engenharia de Software (UCB)
