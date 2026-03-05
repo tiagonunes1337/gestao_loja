@@ -5,30 +5,26 @@ Este projeto integra um banco de dados **MySQL** com o **Power BI** para automat
 ## 🛠️ Tecnologias Utilizadas
 * **Banco de Dados:** MySQL 8.0
 * **Business Intelligence:** Power BI Desktop
+* **Site feito em PHP/HTML5/CSS3/JS para visualização de dados**
 * **Linguagem de Consulta:** SQL
 
 ## 🗄️ Estrutura do Banco de Dados
 O esquema foi projetado para suportar registros flexíveis, permitindo serviços que envolvam apenas mão de obra ou venda de produtos com custos logísticos associados.
 
 ```sql
-CREATE DATABASE bettersmart;
-USE bettersmart;
-
-CREATE TABLE vendas_loja (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
-    cliente VARCHAR(100),
-    descricao_servico VARCHAR(255),
-    valor_peca_custo DECIMAL(10,2) DEFAULT 0.00,  -- Custo de aquisição (Fornecedor)
-    valor_peca_venda DECIMAL(10,2) DEFAULT 0.00,  -- Preço de venda ao cliente
-    valor_frete DECIMAL(10,2) DEFAULT 0.00,       -- Custo de logística/entrega
-    valor_mao_de_obra DECIMAL(10,2) DEFAULT 0.00, -- Valor do serviço técnico
-    valor_total_pago DECIMAL(10,2) NOT NULL       -- Total bruto recebido (Dinheiro no caixa)
-);
-
--- Exemplo de inserção de dados (Venda com peça + serviço + frete)
-INSERT INTO vendas_loja (cliente, descricao_servico, valor_peca_custo, valor_peca_venda, valor_mao_de_obra, valor_total_pago)
-VALUES ('Gabriel', 'Montagem + Fonte', 42.00, 120.00, 200.00, 320.00);
+CREATE TABLE `vendas_loja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT, -- Adicionado AUTO_INCREMENT para os IDs funcionarem sozinhos
+  `data_venda` datetime DEFAULT CURRENT_TIMESTAMP,
+  `cliente` varchar(100) DEFAULT NULL,
+  `descricao_servico` varchar(255) DEFAULT NULL,
+  `valor_peca_custo` decimal(10,2) DEFAULT 0.00,
+  `valor_peca_venda` decimal(10,2) DEFAULT 0.00,
+  `valor_frete` decimal(10,2) DEFAULT 0.00,
+  `valor_mao_de_obra` decimal(10,2) DEFAULT 0.00,
+  `valor_total_pago` decimal(10,2) NOT NULL,
+  `tecnico` varchar(100) DEFAULT 'Tiago',
+  PRIMARY KEY (`id`) -- Definindo o ID como chave primária
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ```
 
@@ -53,5 +49,7 @@ Conexão Power BI: * Vá em Obter Dados > Banco de dados MySQL.
 Servidor: 127.0.0.1:3306 | Banco: bettersmart.
 
 Utilize as credenciais de banco de dados (Usuário dev).
+
+Ou instale o site completo e acessa em PHP, tem como você criar um relatorio em PDF semanal das suas vendas e quanto vai ganhar de comissão de 4%.
 
 Desenvolvido por Tiago de Aquino Nunes Técnico em Informática | Estudante de Engenharia de Software (UCB)
